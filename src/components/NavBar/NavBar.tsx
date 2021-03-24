@@ -5,6 +5,7 @@ const NavBar = () => {
 
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+    const [transparent, setTransparent] = useState(true);
     const [active, setActive] = useState("");
 
 
@@ -37,11 +38,8 @@ const NavBar = () => {
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
         const heightViewport = window.innerHeight;
-        const navToggleCheckbox = document.getElementById('nav-toggle');
 
-        if (navToggleCheckbox && navToggleCheckbox.checked) {
-            navToggleCheckbox.click();
-        }
+        setTransparent(currentScrollPos === 0 ? true : false);
 
         setVisible(prevScrollPos > currentScrollPos || (Math.abs(prevScrollPos - currentScrollPos) > heightViewport / 2) || currentScrollPos < 10);
 
@@ -62,12 +60,12 @@ const NavBar = () => {
 
 
     return (
-        <header style={{ top: visible ? '0' : '-90px' }}>
+        <header style={{ top: visible ? '0' : '-90px', backgroundColor: transparent ? 'transparent' : '' }}>
             <div className={"logo"}>
                 <h1 className={"text-logo"}>Logo</h1>
             </div>
             <input type={"checkbox"} id={'nav-toggle'} className={'nav-toggle'}></input>
-            <nav>
+            <nav style={{backgroundColor: transparent ? 'transparent' : ''}}>
                 <ul>
                     <li><a className={`${active === '' ? "activeItem" : ""}`} href="#">Home</a></li>
                     <li><a className={`${active === 'about' ? "activeItem" : ""}`} href="#about">Nosotros</a></li>

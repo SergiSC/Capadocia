@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color-soft-transparent: rgba(235, 230, 208, 0.5);
+  --color-soft-transparent: rgba(235, 230, 208, 0.85);
   --color-soft: #EBE6D0;
   --color-dark: #292A2C;
   --color-medium: rgba(41, 42, 44, 0.5);
@@ -20,12 +20,18 @@
 section {
   height: 100vh;
   width: 100%;
+  background-color: transparent;
+}
+
+section .section-container {
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (min-width: 801px) {
   section {
     display: grid;
-    grid-template-columns: 1fr minmax(800px, 4fr)  1fr;
+    grid-template-columns: 1fr minmax(800px, 10fr)  1fr;
   }
 
   section .section-container {
