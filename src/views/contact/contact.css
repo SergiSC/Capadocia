@@ -1,3 +1,48 @@
 section#contact .section-container {
-    background-color: white;
+    background-color: var(--color-soft);
+    min-height: 100vh;
+}
+
+section#contact header.contact {
+    height: 45vh;
+    background-image: url('../../assets/images/contact.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+section#contact .contact-body {
+    padding: 1em 10%;
+    color: var(--color-dark);
+    height: 50vh;
+}
+
+section#contact .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+section#contact h3 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+section#contact h1 {
+    margin: 0 0 0.3em 0;
+}
+
+section#contact h2 {
+    margin-top: 0.2em;
+}
+
+section#contact a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+section#contact a:first-child {
+    margin-bottom: 1em;
 }
