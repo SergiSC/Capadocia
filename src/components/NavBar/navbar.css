@@ -1,4 +1,4 @@
-header {
+header#header-nav {
     background-color: var(--color-soft-transparent);
     text-align: center;
     position: fixed;
@@ -31,7 +31,7 @@ nav {
 nav ul {
     margin: 0;
     padding: 0;
-    list-style: none;;
+    list-style: none;
 }
 
 nav li {
@@ -81,7 +81,7 @@ nav a.activeItem {
 .nav-toggle-label span::before {
     display: block;
     background-color: var(--color-dark);
-    height: 3px;
+    height: 2px;
     width: 2em;
     border-radius: 2px;
     position: relative;
@@ -121,7 +121,7 @@ nav a.activeItem {
         display: none;
     }
 
-    header {
+    header#header-nav {
         display: grid;
         grid-template-columns: 1fr auto minmax(600px, 10fr) 1fr;
     }

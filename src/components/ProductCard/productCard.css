@@ -1,0 +1,165 @@
+div.card {
+    cursor: pointer;
+}
+
+div.card:focus {
+    outline: none;
+}
+
+div.card:not(:first-child).bg {
+    margin-left: 1em;
+}
+
+div.card header.card-header img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+div.card div.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0.5em;
+}
+
+div.card div.title-price {
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 1em;
+}
+
+div.card .title {
+    grid-column: 1 / span 1;
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    text-transform: none !important;
+    padding-top: 0 !important;
+}
+
+div.card div.title-price-med {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5px;
+}
+
+div.card div.title-price-med .title {
+    font-size: 0.8rem;
+    line-height: 12px;
+}
+
+
+div.card .title::first-letter,
+div.card .description::first-letter {
+    text-transform: uppercase;
+}
+
+div.card .description {
+    text-align: justify;
+    font-size: 0.8rem;
+}
+
+.card-body .description {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+div.card .price {
+    grid-column: 2 / span 1;
+    color: var(--color-medium);
+    margin: 0;
+    text-align: end;
+}
+
+div.card p.description {
+    font-weight: normal;
+}
+
+/* MODAL */
+.modal-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    transition: display 500ms ease-in-out;
+}
+
+.modal-card-open {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-card-open.modal-card {
+    overflow-x: hidden;
+    overflow-x: auto;
+}
+
+.modal-card-open.modal-card::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-background-modal);
+    content: '';
+}
+
+.modal-card-dialog {
+    position: relative;
+    width: auto;
+    margin: 10%;
+    background-color: transparent;
+    pointer-events: none;
+    border-radius: 15px;
+    box-shadow: 3px 0 20px var(--color-dark);
+}
+
+.modal-card-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-soft);
+    background-clip: padding-box;
+    border: 3px solid var(--color-dark);
+    border-radius: 15px;
+    outline: none;
+
+}
+
+.modal-card-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-card-content .modal-title-price {
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    margin-bottom: 1em;
+}
+
+.modal-card-content .modal-card-body {
+    padding: 5% 5% 10% 5%;
+}
+
+@media screen and (min-width: 801px) {
+    div.card:not(:first-child).bg {
+        margin-left: 0;
+    }
+}

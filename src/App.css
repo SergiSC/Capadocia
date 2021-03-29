@@ -9,29 +9,37 @@
   --color-soft: #EBE6D0;
   --color-dark: #292A2C;
   --color-medium: rgba(41, 42, 44, 0.5);
+  --color-background-modal: rgba(41,42,44,0.75);
 }
 
 .App {
   font-family: 'Avenir Next Con';
   margin: 0;
-  min-height: 200vh;
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: transparent;
 }
 
+section:not(.home) {
+  background-color: var(--color-soft);
+  border-bottom: solid 2px var(--color-dark);
+}
+
 section .section-container {
   height: 100%;
-  width: 100%;
 }
 
 @media screen and (min-width: 801px) {
   section {
     display: grid;
     grid-template-columns: 1fr minmax(800px, 10fr)  1fr;
+  }
+  section#home {
+    display: grid;
+    grid-template-columns: 2fr minmax(800px, 6fr)  1fr;
   }
 
   section .section-container {
