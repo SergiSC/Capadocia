@@ -11,17 +11,18 @@ section#home .section-container {
 }
 
 section#home .section-container button {
+  font-family: var(--ff-bold);
   margin: 0 auto 0 0;
   text-transform: uppercase;
   border: solid 3px var(--color-dark);
   border-radius: 10px;
   background-color: transparent;
   padding: 1em 2em;
-  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 
-.section-container p {
+.section-container h3 {
   margin: 0;
 }
 

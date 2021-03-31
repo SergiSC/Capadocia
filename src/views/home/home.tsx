@@ -10,7 +10,7 @@ const Home = ({ sectionId }: homeProps) => {
         <section id={sectionId} className='home'>
             <div className="section-container">
                 <div id='text-home'>
-                    <p>Iskender Kebap</p>
+                    <h3>Iskender Kebap</h3>
                     <h1>Descubre {window.innerWidth < 801 ? <br /> : ''} el verdadero <br /> sabor turco</h1>
                     <button> haz tu reserva aquí</button>
                 </div>

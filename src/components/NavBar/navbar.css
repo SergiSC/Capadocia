@@ -1,4 +1,5 @@
 header#header-nav {
+    font-family: var(--ff-bold);
     background-color: var(--color-soft-transparent);
     text-align: center;
     position: fixed;

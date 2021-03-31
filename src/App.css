@@ -1,10 +1,25 @@
 @font-face {
-  font-family: 'Avenir Next Con';
-  src: url('./assets/fonts/Avenir\ Next\ Condensed.ttc') format('truetype');
+  font-family: 'ANC-Ligth';
+  src: url('./assets/fonts/AvenirNextCon-Light.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'ANC-Bold';
+  src: url('./assets/fonts/AvenirNextCon-Bold.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'ANC-Semibold';
+  src: url('./assets/fonts/AvenirNextCon-Semibold.ttf') format('truetype');
   font-weight: normal;
 }
 
 :root {
+  --ff-bold: ANC-Bold;
+  --ff-light: ANC-Ligth;
+  --ff-semibold: ANC-Semibold;
   --color-soft-transparent: rgba(235, 230, 208, 0.85);
   --color-soft: #EBE6D0;
   --color-dark: #292A2C;
@@ -13,8 +28,12 @@
 }
 
 .App {
-  font-family: 'Avenir Next Con';
+  font-family: 'ANC-Ligth';
   margin: 0;
+}
+
+h1 {
+  font-family: 'ANC-Bold';
 }
 
 section {

@@ -14,7 +14,6 @@ section#contact header.contact {
 section#contact .contact-body {
     padding: 1em 10%;
     color: var(--color-dark);
-    height: 50vh;
 }
 
 section#contact .content {
@@ -22,7 +21,6 @@ section#contact .content {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: 0.8rem;
 }
 
 section#contact h3 {
@@ -45,4 +43,26 @@ section#contact a {
 
 section#contact a:first-child {
     margin-bottom: 1em;
+}
+
+@media screen and (max-width: 350px) {
+    section#contact .content {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    section#contact {
+        display: block;
+    }
+
+    section#contact .contact-body {
+        display: grid;
+        grid-template-columns: 1fr minmax(800px, 10fr) 1fr;
+        padding: 1em 0;
+    }
+
+    section#contact .grid-desktop {
+        grid-column: 2 / span 1;
+    }
 }

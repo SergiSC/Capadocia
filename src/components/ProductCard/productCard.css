@@ -77,7 +77,8 @@ div.card .price {
 }
 
 div.card p.description {
-    font-weight: normal;
+    font-weight: bold;
+    margin-top: 0;
 }
 
 /* MODAL */
