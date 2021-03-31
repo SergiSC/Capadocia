@@ -30,7 +30,7 @@ function App() {
       <About sectionId='about' />
       <Carta sectionId='carta' deviceWidth={deviceWidth} />
       <Reservation sectionId='reservation' />
-      <Contact sectionId='contact' />
+      <Contact sectionId='contact' deviceWidth={deviceWidth} />
     </div>
   );
 }

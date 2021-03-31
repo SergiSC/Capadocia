@@ -16,11 +16,36 @@ section#contact .contact-body {
     color: var(--color-dark);
 }
 
+section#contact .schedule-body  {
+    background-color: var(--color-dark);
+    color: var(--color-soft);
+    padding: 1em 10%;
+}
+
+section#contact .schedule-body h3 {
+    text-transform: none;
+    font-size: .9rem;
+    font-weight: normal;
+}
+
+section#contact .schedule-body h3::first-letter {
+    text-transform: uppercase;
+}
+
+section#contact .schedule-body .schedule {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-top: 1em;
+}
+
 section#contact .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding-top: 1em;
 }
 
 section#contact h3 {
@@ -45,6 +70,27 @@ section#contact a:first-child {
     margin-bottom: 1em;
 }
 
+section#contact a.ref-reservation {
+    display: flex;
+    justify-content: center;
+}
+
+section#contact a.ref-reservation h1{
+    width: fit-content;
+    border-bottom: 2px solid var(--color-dark);
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin: 1em 2em;
+}
+
+div.dismiss {
+    display: none;
+}
+
+section#contact .border {
+    display: none;
+}
+
 @media screen and (max-width: 350px) {
     section#contact .content {
         font-size: .8rem;
@@ -56,13 +102,83 @@ section#contact a:first-child {
         display: block;
     }
 
-    section#contact .contact-body {
+    section#contact .container-grid-desktop {
         display: grid;
-        grid-template-columns: 1fr minmax(800px, 10fr) 1fr;
+        grid-template-columns: 1fr minmax(400px, 3fr) 2px minmax(400px, 3fr) 1fr;
         padding: 1em 0;
     }
 
-    section#contact .grid-desktop {
+    section#contact .contact-body {
         grid-column: 2 / span 1;
+        padding: 2em 1em 2em 4em;
+    }
+
+    section#contact .border {
+        grid-column: 3 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+    }
+
+    section#contact .border div {
+        height: 50%;
+        margin-bottom: 20px;
+        border-left: 2px dashed var(--color-dark);
+    }
+
+    section#contact .schedule-body {
+        grid-column: 4 / span 1;
+        padding: 2em 4em 2em 1em;
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        background-color: transparent;
+        color: var(--color-dark);
+    }
+    
+    section#contact a.ref-reservation {
+        display: none;
+    }
+
+    section#contact .contact-body .content {
+        text-align: start;
+    }
+
+    section#contact .contact-body .content a {
+        display: flex;
+        width: fit-content;
+    }
+
+    section#contact .contact-body .content a span {
+        margin-right: 1rem;
+        min-width: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section#contact .contact-body .content a h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+    }
+
+    section#contact .contact-body .content a:hover h2 {
+        text-decoration: underline;
+    }
+
+    section#contact .schedule-body .schedule {
+        text-align: end;
+    }
+
+    section#contact .schedule-body .schedule h3 {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    div.dismiss {
+        display: block;
+        height: 25px;
     }
 }
