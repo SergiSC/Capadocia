@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Home sectionId='home' />
-      <About sectionId='about' />
+      <About sectionId='about' deviceWidth={deviceWidth} />
       <Carta sectionId='carta' deviceWidth={deviceWidth} />
       <Reservation sectionId='reservation' />
       <Contact sectionId='contact' deviceWidth={deviceWidth} />

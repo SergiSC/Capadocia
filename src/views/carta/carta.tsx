@@ -259,13 +259,25 @@ const Carta = ({ sectionId, deviceWidth }: cartaProps) => {
                     }
 
                 </div>
-                <div id="prod-container" className={productContainerClass()}>
-                    {
-                        tmpProducts[getIndexCategory()].products.map((value, index) => {
-                            return renderCardProduct(value.title, value.price, value.description, index, (Math.round(Math.random()) === 1 ? kebab1 : kebab2));
-                        })
-                    }
-                </div>
+                {
+                    deviceWidth > 800 ?
+                        <div className="desktop-scroll">
+                            <div id="prod-container" className={productContainerClass()}>
+                                {
+                                    tmpProducts[getIndexCategory()].products.map((value, index) => {
+                                        return renderCardProduct(value.title, value.price, value.description, index, (Math.round(Math.random()) === 1 ? kebab1 : kebab2));
+                                    })
+                                }
+                            </div>
+                        </div> :
+                        <div id="prod-container" className={productContainerClass()}>
+                            {
+                                tmpProducts[getIndexCategory()].products.map((value, index) => {
+                                    return renderCardProduct(value.title, value.price, value.description, index, (Math.round(Math.random()) === 1 ? kebab1 : kebab2));
+                                })
+                            }
+                        </div>
+                }
             </div>
         </section >
     )

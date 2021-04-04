@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Logo from '../../assets/icons/logo.png';
 import './navbar.css';
 
 const NavBar = () => {
@@ -63,9 +64,9 @@ const NavBar = () => {
 
     return (
         <header id="header-nav" style={{ top: visible ? '0' : '-90px', backgroundColor: transparent ? 'transparent' : '' }}>
-            <div className={"logo"}>
-                <h1 className={"text-logo"}>Logo</h1>
-            </div>
+            <a className={"logo"} href="#">
+                <img src={Logo} alt="" height="50px" width="auto" className="img-logo" />
+            </a>
             <input type={"checkbox"} id={'nav-toggle'} className={'nav-toggle'}></input>
             <nav style={{ backgroundColor: transparent ? 'transparent' : '' }}>
                 <ul>

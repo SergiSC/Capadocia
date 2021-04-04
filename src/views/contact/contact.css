@@ -1,6 +1,5 @@
 section#contact .section-container {
     background-color: var(--color-soft);
-    min-height: 100vh;
 }
 
 section#contact header.contact {

@@ -8,13 +8,14 @@ header#header-nav {
     transition: top 300ms;
 }
 
-.text-logo {
-    width: fit-content;
+.logo {
+    float: left;
+    padding-left: 1em;
+}
+
+.img-logo {
     color: var(--color-dark);
-    padding-right: .5em;
-    padding-left: .5em;
     margin:0.67em 2em 0.67em 0;
-    border-radius: 20px;
 }
 
 nav {
@@ -128,6 +129,7 @@ nav a.activeItem {
     }
 
     .logo {
+        padding-left: 0;
         grid-column: 2 / span 1;
     }
 

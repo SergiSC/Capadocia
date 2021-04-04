@@ -12,6 +12,11 @@ type CardProps = {
     deviceWidth: number
 }
 
+const frases = [
+    "Que PITA tiene",
+    "Esto no me lo esperaba..."
+]
+
 const ProductCard = ({ title, price, description, id, image, cardSize, cardHeight, deviceWidth }: CardProps) => {
 
     const [showModal, setShowModal] = useState(false);
@@ -37,6 +42,9 @@ const ProductCard = ({ title, price, description, id, image, cardSize, cardHeigh
                                 <h4 className="price">{price}€</h4>
                             </div>
                             <p className="description">{description}</p>
+                            <div className="frase">
+                                <p>"{frases[Math.floor(Math.random() * frases.length)]}"</p>
+                            </div>
                         </div>
                     </div>
                 </div>
