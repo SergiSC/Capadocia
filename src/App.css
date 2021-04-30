@@ -38,7 +38,7 @@ h1 {
 
 section {
   width: 100%;
-  padding: 2em 0;
+  padding: 0;
   background-color: transparent;
 }
 
@@ -57,6 +57,7 @@ section .section-container {
 @media screen and (min-width: 801px) {
   section {
     display: grid;
+    padding: 2em 0;
     grid-template-columns: 1fr minmax(800px, 10fr)  1fr;
   }
   section#home {

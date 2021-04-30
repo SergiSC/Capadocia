@@ -12,7 +12,7 @@ const Home = ({ sectionId }: homeProps) => {
                 <div id='text-home'>
                     <h3>Iskender Kebap</h3>
                     <h1>Descubre {window.innerWidth < 801 ? <br /> : ''} el verdadero <br /> sabor turco</h1>
-                    <button onClick={() => { window.location.href = '#reservation'; }}> haz tu reserva aquí</button>
+                    <button onClick={() => { window.location.href = '#reservation'; }}>ver la carta</button>
                 </div>
                 <div id='sn-home' className="row-btn-sn">
                     <a href="tel:+3493384820">
