@@ -8,7 +8,8 @@ section#carta .section-container {
     background-color: transparent;
     display: grid;
     grid-template-rows: auto 10fr;
-    padding: 0 10% 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     color: var(--color-dark);
     overflow-x: hidden;
     max-height: 100vh;

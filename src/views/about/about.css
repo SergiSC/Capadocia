@@ -1,6 +1,5 @@
 section#about .section-container {
     background-color: transparent;
-    padding: 1em 0;
 }
 
 section#about h3 {
@@ -26,7 +25,7 @@ section#about div.bg {
     z-index: 2;
     position: absolute;
     right: 0;
-    background-image: url('../../assets/images/products/kebab1.jpg');
+    background-image: url('../../assets/images/hotairballon_1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -39,7 +38,7 @@ section#about div.front {
     z-index: 3;
     position: absolute;
     top: 25%;
-    background-image: url('../../assets/images/products/kebab2.jpg');
+    background-image: url('../../assets/images/front.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -90,7 +89,8 @@ section#about .about-content .toggle-display.active {
 
 section#about .toggle-display .circle {
     position: absolute;
-    left: 40%;
+    left: 50%;
+    transform: translate(-50%);
     border-radius: 50%;
     background-color: var(--color-soft);
     height: 50px;
@@ -113,12 +113,20 @@ section#about .toggle-display p {
 section#about .container-target {
     padding: 1em 0;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 3fr;
 }
 
-section#about .container-target img {
+section#about .container-target div.image {
+    position: relative;
     grid-column: 1 / span 1;
+    justify-self: right;
     height: 40px;
+    width: 50px;
+}
+
+section#about .container-target div.image img {
+    justify-self: right;
+    height: 100%;
 }
 
 section#about .container-target h3 {
@@ -161,7 +169,7 @@ section#about.desktop div.bg {
     position: absolute;
     top: 5%;
     left: 0;
-    background-image: url('../../assets/images/products/kebab1.jpg');
+    background-image: url('../../assets/images/hotairballon_2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -174,7 +182,7 @@ section#about.desktop div.front {
     z-index: 2;
     position: absolute;
     right: -5%;
-    background-image: url('../../assets/images/products/kebab2.jpg');
+    background-image: url('../../assets/images/front.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -185,7 +193,7 @@ section#about.desktop .desktop-content {
     grid-column: 2 / span 1;
     background-color: white;
     height: fit-content;
-    padding:3em  6em;
+    padding:3em  4.5em;
     place-self: center;
 }
 
