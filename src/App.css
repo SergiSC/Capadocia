@@ -46,11 +46,7 @@ section > div {
   padding: 2em 0;
 }
 
-section:last-child > div {
-  padding-bottom: 0;
-}
-
-section:last-child {
+section#contact > div {
   padding-bottom: 0;
 }
 
