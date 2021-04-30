@@ -73,7 +73,6 @@ const NavBar = () => {
                     <li><a className={`${active === '' ? "activeItem" : ""}`} href="#">Home</a></li>
                     <li><a className={`${active === 'about' ? "activeItem" : ""}`} href="#about">Nosotros</a></li>
                     <li><a className={`${active === 'carta' ? "activeItem" : ""}`} href="#carta">Carta</a></li>
-                    <li><a className={`${active === 'reservation' ? "activeItem" : ""}`} href="#reservation">Reserva</a></li>
                     <li><a className={`${active === 'contact' ? "activeItem" : ""}`} href="#contact">Contacto</a></li>
                 </ul>
             </nav>

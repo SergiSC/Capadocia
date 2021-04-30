@@ -50,9 +50,6 @@ const Contact = (props: contactProps) => {
                         </div>
                     </div>
                 </div>
-                <a href="#reservation" className="ref-reservation">
-                    <h1>reservas</h1>
-                </a>
             </div>
         </section>
     )
