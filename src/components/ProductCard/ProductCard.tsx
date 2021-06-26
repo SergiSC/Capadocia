@@ -26,7 +26,7 @@ const ProductCard = ({ title, price, description, id, image, cardSize, cardHeigh
         showModal ? modal?.classList.add('modal-card-open') : modal?.classList.remove('modal-card-open');
 
         return () => { }
-    }, [showModal])
+    }, [id, showModal])
 
     const RenderModal = () => {
         return (
