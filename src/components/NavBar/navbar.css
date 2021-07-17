@@ -16,6 +16,7 @@ header#header-nav {
 .img-logo {
     color: var(--color-dark);
     margin:0.67em 2em 0.67em 0;
+    cursor: pointer;
 }
 
 nav {

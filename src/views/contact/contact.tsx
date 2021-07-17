@@ -26,7 +26,7 @@ const Contact = (props: contactProps) => {
                                 <h3>nuestro</h3>
                                 <h1>contacto</h1>
                                 <div className="content">
-                                    <a target='_blank' href="https://www.google.com/maps/place/Capadocia/@41.4500602,2.246646,19z/data=!3m1!4b1!4m5!3m4!1s0x12a4bb0ded7876f7:0x9fda5e15a2ce818!8m2!3d41.4500592!4d2.2471932">
+                                    <a target='_blank' rel="noreferrer" href="https://www.google.com/maps/place/Capadocia/@41.4500602,2.246646,19z/data=!3m1!4b1!4m5!3m4!1s0x12a4bb0ded7876f7:0x9fda5e15a2ce818!8m2!3d41.4500592!4d2.2471932">
                                         <span><i className={iMapClass}></i></span>
                                         <h2>Carrer de Francesc Layret, 79,<br />08911 Badalona, Barcelona</h2>
                                     </a>
@@ -50,9 +50,6 @@ const Contact = (props: contactProps) => {
                         </div>
                     </div>
                 </div>
-                <a href="#reservation" className="ref-reservation">
-                    <h1>reservas</h1>
-                </a>
             </div>
         </section>
     )

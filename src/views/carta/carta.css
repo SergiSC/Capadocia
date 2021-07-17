@@ -80,6 +80,8 @@ div#nav-carta button {
     padding: 1em 0;
     color: var(--color-medium);
     font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 div#nav-carta button.active,

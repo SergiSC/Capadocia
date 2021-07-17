@@ -26,7 +26,7 @@ section#about div.bg {
     z-index: 2;
     position: absolute;
     right: 0;
-    background-image: url('../../assets/images/products/kebab1.jpg');
+    background-image: url('../../assets/images/fgran2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -39,11 +39,11 @@ section#about div.front {
     z-index: 3;
     position: absolute;
     top: 25%;
-    background-image: url('../../assets/images/products/kebab2.jpg');
+    background-image: url('../../assets/images/fpetita_1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 section#about .about-content {
@@ -53,6 +53,7 @@ section#about .about-content {
 
 section#about .section-content {
     padding: 0 10%;
+    margin-bottom: 50px;
 }
 
 section#about .section-content p {
@@ -161,7 +162,7 @@ section#about.desktop div.bg {
     position: absolute;
     top: 5%;
     left: 0;
-    background-image: url('../../assets/images/products/kebab1.jpg');
+    background-image: url('../../assets/images/fgran2.1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -174,18 +175,18 @@ section#about.desktop div.front {
     z-index: 2;
     position: absolute;
     right: -5%;
-    background-image: url('../../assets/images/products/kebab2.jpg');
+    background-image: url('../../assets/images/fpetita_1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 section#about.desktop .desktop-content {
     grid-column: 2 / span 1;
     background-color: white;
     height: fit-content;
-    padding:3em  6em;
+    padding: 3em 3em 3em 5em;
     place-self: center;
 }
 
@@ -208,6 +209,10 @@ section#about.desktop .desktop-content .desktop-targets {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+.desktop-targets h1 {
+    margin: 0 !important;
 }
 
 section#about.desktop .grid-targets {

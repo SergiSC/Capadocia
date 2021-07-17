@@ -37,6 +37,10 @@ section#home a {
   font-size: 1.3em;
 }
 
+.ver-carta {
+  cursor: pointer;
+}
+
 section#home a.next {
   margin: 0;
   position: absolute;

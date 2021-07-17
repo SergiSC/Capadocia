@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Logo from '../../assets/icons/logo.png';
 import './navbar.css';
 
@@ -40,14 +40,14 @@ const NavBar = () => {
 
     }
 
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         const currentScrollPos = window.pageYOffset;
         const heightViewport = window.innerHeight;
 
         setVisible(prevScrollPos > currentScrollPos || (Math.abs(prevScrollPos - currentScrollPos) > heightViewport / 10) || currentScrollPos < 10);
 
         setPrevScrollPos(currentScrollPos);
-    }
+    }, [prevScrollPos]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -64,16 +64,15 @@ const NavBar = () => {
 
     return (
         <header id="header-nav" style={{ top: visible ? '0' : '-90px', backgroundColor: transparent ? 'transparent' : '' }}>
-            <a className={"logo"} href="#">
+            <a className={"logo"} href="#home">
                 <img src={Logo} alt="" height="50px" width="auto" className="img-logo" />
             </a>
             <input type={"checkbox"} id={'nav-toggle'} className={'nav-toggle'}></input>
             <nav style={{ backgroundColor: transparent ? 'transparent' : '' }}>
                 <ul>
-                    <li><a className={`${active === '' ? "activeItem" : ""}`} href="#">Home</a></li>
+                    <li><a className={`${active === '' ? "activeItem" : ""}`} href="#home">Home</a></li>
                     <li><a className={`${active === 'about' ? "activeItem" : ""}`} href="#about">Nosotros</a></li>
                     <li><a className={`${active === 'carta' ? "activeItem" : ""}`} href="#carta">Carta</a></li>
-                    <li><a className={`${active === 'reservation' ? "activeItem" : ""}`} href="#reservation">Reserva</a></li>
                     <li><a className={`${active === 'contact' ? "activeItem" : ""}`} href="#contact">Contacto</a></li>
                 </ul>
             </nav>
