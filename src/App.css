@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'ANC-Ligth';
-  src: url('./assets/fonts/AvenirNextCon-Light.ttf') format('truetype');
+  font-family: "ANC-Ligth";
+  src: url("./assets/fonts/AvenirNextCon-Light.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'ANC-Bold';
-  src: url('./assets/fonts/AvenirNextCon-Bold.ttf') format('truetype');
+  font-family: "ANC-Bold";
+  src: url("./assets/fonts/AvenirNextCon-Bold.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'ANC-Semibold';
-  src: url('./assets/fonts/AvenirNextCon-Semibold.ttf') format('truetype');
+  font-family: "ANC-Semibold";
+  src: url("./assets/fonts/AvenirNextCon-Semibold.ttf") format("truetype");
   font-weight: normal;
 }
 
@@ -21,25 +21,28 @@
   --ff-light: ANC-Ligth;
   --ff-semibold: ANC-Semibold;
   --color-soft-transparent: rgba(235, 230, 208, 0.85);
-  --color-soft: #EBE6D0;
-  --color-dark: #292A2C;
+  --color-soft: #ebe6d0;
+  --color-dark: #292a2c;
   --color-medium: rgba(41, 42, 44, 0.5);
-  --color-background-modal: rgba(41,42,44,0.75);
+  --color-background-modal: rgba(41, 42, 44, 0.75);
 }
 
 .App {
-  font-family: 'ANC-Ligth';
+  font-family: "ANC-Ligth";
   margin: 0;
 }
 
 h1 {
-  font-family: 'ANC-Bold';
+  font-family: "ANC-Bold";
 }
 
 section {
-  width: 100%;
   padding: 2em 0;
   background-color: transparent;
+}
+
+section#contact {
+  padding-bottom: 0;
 }
 
 section:last-child {
@@ -57,11 +60,11 @@ section .section-container {
 @media screen and (min-width: 801px) {
   section {
     display: grid;
-    grid-template-columns: 1fr minmax(800px, 10fr)  1fr;
+    grid-template-columns: 1fr minmax(800px, 10fr) 1fr;
   }
   section#home {
     display: grid;
-    grid-template-columns: 2fr minmax(800px, 6fr)  1fr;
+    grid-template-columns: 2fr minmax(800px, 6fr) 1fr;
   }
 
   section .section-container {
