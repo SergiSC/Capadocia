@@ -58,10 +58,6 @@ section .section-container {
 }
 
 @media screen and (min-width: 801px) {
-  section {
-    display: grid;
-    grid-template-columns: 1fr minmax(800px, 10fr) 1fr;
-  }
   section#home {
     display: grid;
     grid-template-columns: 2fr minmax(800px, 6fr) 1fr;

@@ -27,6 +27,8 @@ export function ImageCarrousel({ width }: ImageCarrouselProps) {
     } else setSelectedImage(selectedImage - 1);
   }, [selectedImage, setSelectedImage]);
 
+  const allImages = [Foto1, Foto2, Foto3, Foto4];
+
   const selectImage = useCallback(() => {
     switch (selectedImage) {
       case 0:
@@ -51,7 +53,11 @@ export function ImageCarrousel({ width }: ImageCarrouselProps) {
 
   return (
     <WrapperCarrousel>
-      {width > 800 ? null : (
+      {width > 800 ? (
+        allImages.map((i: string, index: number) => (
+          <ImageWrapper key={index} bgImage={i} />
+        ))
+      ) : (
         <>
           <ImageWrapper bgImage={selectImage()} border />
           <ImageCarrouselButtonLeft onClick={onClickLeftHandle}>
@@ -70,9 +76,10 @@ const WrapperCarrousel = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
+  margin: 20px 0;
 
   @media screen and (min-width: 800px) {
-    grid-template-columns: 4fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 10px;
   }
 `;
