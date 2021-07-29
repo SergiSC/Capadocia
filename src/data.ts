@@ -1,3 +1,8 @@
+import Meat from "./assets/icons/meat.png";
+import Kebap from "./assets/icons/kebap.png";
+import Cup from "./assets/icons/cup.png";
+import Leaf from "./assets/icons/leaf.png";
+
 export const TypeProduct = new Map<number, string>(
     [
         [1, "ensaladas y entrantes"],
@@ -372,3 +377,32 @@ export const menu: menuItem[] = [{
         }
     ]
 }]
+
+export interface TargetListProp {
+    image: string;
+    title: string;
+    description: string;
+}
+
+export const targetList: TargetListProp[] = [
+    {
+        image: Meat,
+        title: "carne fresca",
+        description: "Trabajamos con productos frescos y naturales.",
+    },
+    {
+        image: Kebap,
+        title: "kebab de calidad",
+        description: "La carne del kebap es de elaboración propia.",
+    },
+    {
+        image: Cup,
+        title: "platos tradicionales",
+        description: "Sumérgete en la cultura turca.",
+    },
+    {
+        image: Leaf,
+        title: "opción vegetariana",
+        description: "Pensamos en vosotros, tenemos comida vegetariana.",
+    },
+];
