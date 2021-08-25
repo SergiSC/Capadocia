@@ -34,7 +34,6 @@ div.card .title {
     grid-column: 1 / span 1;
     color: var(--color-dark);
     font-size: 1.1rem;
-    text-transform: none !important;
     padding-top: 0 !important;
 }
 
@@ -151,15 +150,62 @@ div.card p.description {
     font-size: 1rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .modal-card-content .modal-card-body {
-    padding: 5% 5% 10% 5%;
+    padding: 5%;
 }
 
 div.frase {
     display: none;
+}
+
+div.allergens {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+div.allergens > div {
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+}
+
+div.allergens > div:last-child {
+    margin-right: 0;
+}
+
+div.allergens > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.description-cat {
+    color: #5f130f;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.description-cat::first-letter {
+    text-transform: uppercase;
+}
+
+.description-esp {
+    font-weight: bold;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.description-esp::first-letter {
+    text-transform: uppercase;
+}
+
+.title-cat {
+    font-size: 1rem;
+    color: #5f130f;
 }
 
 @media screen and (min-width: 801px) {
@@ -168,20 +214,28 @@ div.frase {
     }
 
     /* MODAL */
-
-    .modal-card-dialog {
-        height: 50%;
-    }
-
     .modal-card-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         width: 100%;
+        position: relative;
+    }
+
+    .modal-card-content > header {
         height: 100%;
+    }
+
+    .modal-card-content header.card-header img{
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
     }
 
     .modal-card-body {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .modal-card-content header img {
@@ -189,8 +243,12 @@ div.frase {
         border-radius: 12px 0 0 12px;
     }
 
-    .modal-card-content .modal-title-price h3 {
-        font-size: 2rem;
+    .modal-card-content .modal-title-price h3.title {
+        font-size: 1.7rem;
+    }
+
+    .title-cat {
+        font-size: 1.5rem;
     }
 
     .modal-card-content .modal-title-price h4 {
@@ -213,5 +271,13 @@ div.frase {
         color: var(--color-medium);
         font-style: italic;
         font-size: 1.3rem;
+    }
+
+    .description-cat, .description-esp {
+        font-size: 1.2rem;
+    }
+
+    div.allergens {
+        margin-top: 100px;
     }
 }

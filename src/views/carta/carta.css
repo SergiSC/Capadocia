@@ -8,8 +8,7 @@ section#carta .section-container {
     background-color: transparent;
     display: grid;
     grid-template-rows: auto 10fr;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 0 10% 1em;
     color: var(--color-dark);
     overflow-x: hidden;
     max-height: 100vh;
@@ -81,6 +80,8 @@ div#nav-carta button {
     padding: 1em 0;
     color: var(--color-medium);
     font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 div#nav-carta button.active,
