@@ -29,7 +29,7 @@ function App() {
       <About sectionId="about" deviceWidth={deviceWidth} />
       <Carta sectionId="carta" deviceWidth={deviceWidth} />
       <Contact sectionId="contact" deviceWidth={deviceWidth} />
-      <Footer sectionId="footer" />
+      <Footer sectionId="footer" deviceWidth={deviceWidth} />
     </div>
   );
 }
