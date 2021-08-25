@@ -137,7 +137,7 @@ interface HomeProps {
   sectionId: string;
 }
 
-export function Home2({ sectionId }: HomeProps) {
+export function Home({ sectionId }: HomeProps) {
   return (
     <HomeSection id={sectionId}>
       <HomeWrapper>
