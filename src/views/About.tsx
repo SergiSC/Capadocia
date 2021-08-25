@@ -8,26 +8,26 @@ import { ImageWrapper } from "../components/ImageWrapper";
 import { TargetAbout } from "../components/TargetAbout";
 import { targetList, TargetListProp } from "../data";
 
-const StyledSection = styled.section<{ removePadding?: boolean }>`
+export const StyledSection = styled.section<{ removePadding?: boolean }>`
   padding: ${(props) => (props.removePadding ? "20px 0" : "20px 10%")};
 
   @media screen and (min-width: 800px) {
     display: grid;
     grid-template-columns: 1fr minmax(800px, 4fr) 1fr;
     padding: 20px 0;
-
-    & > div {
-      grid-column: 2 / span 1;
-    }
   }
 `;
 
-const TitleBase = css<{ centred?: boolean; margin?: string }>`
+const TitleBase = css<{ align?: string; margin?: string }>`
   text-transform: uppercase;
   font-weight: bold;
   margin: 0;
   margin-left: ${(props) => (props.margin ? props.margin : 0)};
-  text-align: ${(props) => (props.centred ? "center" : "start")};
+  text-align: ${(props) => (props.align ? props.align : "start")};
+
+  @media screen and (min-width: 800px) {
+    font-size: 2em;
+  }
 `;
 
 export const TitleL = styled.h1`
@@ -86,7 +86,7 @@ export function About({ sectionId, deviceWidth }: AboutProps) {
   return (
     <>
       <StyledSection id={sectionId}>
-        <div>
+        <div style={{ gridColumn: 2 }}>
           <TitleM margin={deviceWidth > 800 ? "40%" : "0"}>sobre</TitleM>
           <TitleL margin={deviceWidth > 800 ? "40%" : "0"}>nosotros</TitleL>
           <PText>
@@ -115,9 +115,9 @@ export function About({ sectionId, deviceWidth }: AboutProps) {
         </div>
       </StyledSection>
       <StyledSection removePadding>
-        <div>
+        <div style={{ gridColumn: 2 }}>
           <DiferenciamosWrapper>
-            <TitleL centred>nos diferenciamos por...</TitleL>
+            <TitleL align="center">nos diferenciamos por...</TitleL>
             <TargetsWrapper>
               {targetList.map((t: TargetListProp, index: number) => (
                 <TargetAbout key={index} {...t} />
@@ -127,8 +127,8 @@ export function About({ sectionId, deviceWidth }: AboutProps) {
         </div>
       </StyledSection>
       <StyledSection>
-        <div>
-          <TitleL centred>conócenos por dentro</TitleL>
+        <div style={{ gridColumn: 2 }}>
+          <TitleL align="center">conócenos por dentro</TitleL>
           <StyledVideo autoPlay loop muted>
             <source src={video} type="video/mp4"></source>
           </StyledVideo>

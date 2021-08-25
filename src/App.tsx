@@ -3,9 +3,9 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import { About } from "./views/About";
 import Carta from "./views/carta/carta";
-import Contact from "./views/contact/contact";
 import { Home } from "./views/Home";
 import { Footer } from "./components/Footer";
+import { Contact } from "./views/Contact";
 
 function App() {
   const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
