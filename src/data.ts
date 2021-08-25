@@ -1,5 +1,5 @@
 import Meat from "./assets/icons/meat.png";
-import Kebap from "./assets/icons/kebap.png";
+import KebapIcon from "./assets/icons/kebap.png";
 import Cup from "./assets/icons/cup.png";
 import Leaf from "./assets/icons/leaf.png";
 
@@ -391,7 +391,7 @@ export const targetList: TargetListProp[] = [
         description: "Trabajamos con productos frescos y naturales.",
     },
     {
-        image: Kebap,
+        image: KebapIcon,
         title: "kebab de calidad",
         description: "La carne del kebap es de elaboración propia.",
     },

@@ -49,7 +49,7 @@ section:last-child {
   padding-bottom: 0;
 }
 
-section:not(.home) {
+section:not(#home) {
   background-color: var(--color-soft);
 }
 
