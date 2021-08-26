@@ -1,11 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 
 import Foto1 from "../assets/images/about/1.png";
 import Foto2 from "../assets/images/about/2.png";
 import Foto3 from "../assets/images/about/3.png";
 import Foto4 from "../assets/images/about/4.png";
-import { useTimeout } from "../hooks/timeout";
 import { ImageWrapper } from "./ImageWrapper";
 
 interface ImageCarrouselProps {
@@ -42,15 +41,6 @@ export function ImageCarrousel({ width }: ImageCarrouselProps) {
     }
   }, [selectedImage]);
 
-  const next = useTimeout(5);
-  const nextRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (nextRef.current) {
-      nextRef.current.click();
-    }
-  }, [next]);
-
   return (
     <WrapperCarrousel>
       {width > 800 ? (
@@ -63,7 +53,7 @@ export function ImageCarrousel({ width }: ImageCarrouselProps) {
           <ImageCarrouselButtonLeft onClick={onClickLeftHandle}>
             &#60;
           </ImageCarrouselButtonLeft>
-          <ImageCarrouselButtonRight ref={nextRef} onClick={onClickRightHandle}>
+          <ImageCarrouselButtonRight onClick={onClickRightHandle}>
             &#62;
           </ImageCarrouselButtonRight>
         </>
