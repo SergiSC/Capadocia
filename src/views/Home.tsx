@@ -1,9 +1,49 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useCallback, useState } from "react";
+import styled, { keyframes, css } from "styled-components";
 import { TitleL, TitleM } from "./About";
-import bgImage from "../assets/images/bg-kebab.jpg";
+import bgImageMenu from "../assets/images/bg-kebab.jpg";
+import bgImageLandscape from "../assets/images/bgImageLandscape.jpeg";
+import { useInterval } from "../hooks/interval";
 
-const HomeSection = styled.section`
+const intervalSeconds = 8;
+
+const fadeInOut = keyframes`
+    0% {
+      opacity: 0.2;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+`;
+
+const shake = keyframes`
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {transform: rotate(-10deg);}
+    20% {transform: rotate(10deg);}
+    30% {transform: rotate(10deg);}
+    40% {transform: rotate(-10deg);}
+    50% {transform: rotate(-10deg);}
+    60% {transform: rotate(10deg);}
+    70% {transform: rotate(10deg);}
+    80% {transform: rotate(-10deg);}
+    90% {transform: rotate(-10deg);}
+    100% {transform: rotate(0deg);}
+`;
+
+const animation = css`
+  -webkit-animation: ${fadeInOut} ${intervalSeconds}s ease-in-out infinite;
+  animation: ${fadeInOut} ${intervalSeconds}s ease-in-out infinite;
+`;
+
+const HomeSection = styled.section<{ bgImage: string }>`
   position: relative;
   background-color: transparent;
   display: flex;
@@ -14,6 +54,7 @@ const HomeSection = styled.section`
   font-size: 16pt;
   height: 100vh;
   color: var(--color-dark);
+  ${animation}
 
   :before {
     z-index: -1;
@@ -25,7 +66,7 @@ const HomeSection = styled.section`
     width: 100%;
     height: 100%;
     opacity: 0.4;
-    background-image: url(${bgImage});
+    background-image: url(${(props) => props.bgImage});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -46,7 +87,7 @@ const HomeWrapper = styled.div`
   @media screen and (min-width: 800px) {
     grid-column: 2 / span 1;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 4fr 1fr;
     font-size: 25pt;
     padding: 0;
   }
@@ -68,7 +109,7 @@ const IconsContainer = styled.div`
 
   @media screen and (min-width: 800px) {
     display: flex;
-    margin-bottom: 20%;
+    margin-bottom: 80%;
     flex-direction: column;
     justify-content: flex-end;
     margin-left: auto;
@@ -90,6 +131,15 @@ const CartaA = styled.a`
 
   @media screen and (min-width: 800px) {
     margin-top: 10%;
+    box-shadow: 0 0 0 0 #888888;
+
+    :hover {
+      color: var(--color-soft);
+      background-color: var(--color-dark);
+      box-shadow: 0 0 10px 2px #888888;
+      transition: box-shadow 200ms ease-in-out, color 200ms ease-in-out,
+        background-color 200ms ease-in-out;
+    }
   }
 `;
 
@@ -99,6 +149,11 @@ const CustomA = styled.a`
   font-size: 1.3em;
   @media screen and (min-width: 800px) {
     margin-top: 20%;
+
+    :hover {
+      -webkit-animation: ${shake} 300ms ease;
+      animation: ${shake} 300ms ease;
+    }
   }
 `;
 
@@ -131,23 +186,68 @@ const CustomANext = styled(CustomA)`
 const TitleLHome = styled(TitleL)`
   margin: 20px 0;
   font-size: 2em;
+  white-space: pre-line;
 `;
+
+interface slide {
+  id: number;
+  image: string;
+  littleText: string;
+  buttonText: string;
+  textMovil: string;
+  textDesktop: string;
+}
+
+const initialSlideState: slide = {
+  id: 0,
+  image: bgImageLandscape,
+  littleText: "Iskender Kebap",
+  buttonText: "ver la carta",
+  textMovil: "Descubre \n el verdadero \n sabor turco",
+  textDesktop: "Descubre el verdadero \n sabor turco",
+};
 
 interface HomeProps {
   sectionId: string;
+  deviceWidth: number;
 }
 
-export function Home({ sectionId }: HomeProps) {
+export function Home({ sectionId, deviceWidth }: HomeProps) {
+  const [slideState, setSlideState] = useState(initialSlideState);
+
+  const changeSlide = useCallback(() => {
+    let newId = slideState.id + 1 < 2 ? slideState.id + 1 : 0;
+    switch (newId) {
+      case 0:
+        setSlideState(initialSlideState);
+        break;
+      case 1:
+        setSlideState({
+          id: newId,
+          image: bgImageMenu,
+          littleText: "Menu Kebap",
+          buttonText: "7,50€",
+          textMovil: "dürüm kebap\n + patatas fritas\n + bebida",
+          textDesktop: "dürüm kebap\n + patatas fritas + bebida",
+        });
+        break;
+
+      default:
+        break;
+    }
+  }, [setSlideState, slideState]);
+
+  useInterval(changeSlide, intervalSeconds);
+
   return (
-    <HomeSection id={sectionId}>
+    <HomeSection id={sectionId} bgImage={slideState.image}>
       <HomeWrapper>
         <TextContainer>
-          <TitleM>Iskender Kebap</TitleM>
+          <TitleM>{slideState.littleText}</TitleM>
           <TitleLHome>
-            Descubre {window.innerWidth < 800 ? <br /> : ""} el verdadero <br />{" "}
-            sabor turco
+            {deviceWidth > 800 ? slideState.textDesktop : slideState.textMovil}
           </TitleLHome>
-          <CartaA href="#carta">ver la carta</CartaA>
+          <CartaA href="#carta">{slideState.buttonText}</CartaA>
         </TextContainer>
         <IconsContainer>
           <CustomA href="tel:+3493384820" title="Teléfono">

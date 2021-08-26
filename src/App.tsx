@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Home sectionId="home" />
+      <Home sectionId="home" deviceWidth={deviceWidth} />
       <About sectionId="about" deviceWidth={deviceWidth} />
       <Carta sectionId="carta" deviceWidth={deviceWidth} />
       <Contact sectionId="contact" deviceWidth={deviceWidth} />
