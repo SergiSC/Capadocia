@@ -23,9 +23,7 @@ const fadeInOut = keyframes`
 `;
 
 const shake = keyframes`
-    0% {
-      transform: rotate(0deg);
-    }
+    0% {transform: rotate(0deg);}
     10% {transform: rotate(-10deg);}
     20% {transform: rotate(10deg);}
     30% {transform: rotate(10deg);}
@@ -36,6 +34,14 @@ const shake = keyframes`
     80% {transform: rotate(-10deg);}
     90% {transform: rotate(-10deg);}
     100% {transform: rotate(0deg);}
+`;
+
+const jump = keyframes`
+    0% {transform: translateY(0);}
+    30% {transform: translateY(-15px);}
+    50% {transform: translateY(15px);}
+    80% {transform: translateY(-8px);}
+    100% {transform: translateY(8px);}
 `;
 
 const animation = css`
@@ -149,10 +155,23 @@ const CustomA = styled.a`
   font-size: 1.3em;
   @media screen and (min-width: 800px) {
     margin-top: 20%;
+  }
+`;
 
+const Telephone = styled(CustomA)`
+  @media screen and (min-width: 800px) {
     :hover {
       -webkit-animation: ${shake} 300ms ease;
       animation: ${shake} 300ms ease;
+    }
+  }
+`;
+
+const Map = styled(CustomA)`
+  @media screen and (min-width: 800px) {
+    :hover {
+      -webkit-animation: ${jump} 500ms ease;
+      animation: ${jump} 500ms ease;
     }
   }
 `;
@@ -250,12 +269,12 @@ export function Home({ sectionId, deviceWidth }: HomeProps) {
           <CartaA href="#carta">{slideState.buttonText}</CartaA>
         </TextContainer>
         <IconsContainer>
-          <CustomA href="tel:+3493384820" title="Teléfono">
+          <Telephone href="tel:+3493384820" title="Teléfono">
             <span>
               <i className="fas fa-phone-alt"></i>
             </span>
-          </CustomA>
-          <CustomA
+          </Telephone>
+          <Map
             title="Mapa"
             target="_blank"
             rel="noreferrer"
@@ -264,7 +283,7 @@ export function Home({ sectionId, deviceWidth }: HomeProps) {
             <span>
               <i className="fas fa-map-marker-alt"></i>
             </span>
-          </CustomA>
+          </Map>
         </IconsContainer>
       </HomeWrapper>
       <CustomANext href="#about">
