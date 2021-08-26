@@ -2,6 +2,7 @@ section#carta {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 100vh;
 }
 
 section#carta .section-container {

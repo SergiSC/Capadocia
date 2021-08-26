@@ -101,7 +101,8 @@ export const menu: menuItem[] = [{
             descriptionEsp: "hummus, tzaziki, sarma, falafel y babaganoush",
             price: 7.90,
             vegetarian: true,
-            allergens: [1, 5]
+            allergens: [1, 5],
+            image: true
         },
         {
             id: 6,
@@ -109,7 +110,8 @@ export const menu: menuItem[] = [{
             titleCat: "Patates fregides",
             price: 2.50,
             vegetarian: true,
-            allergens: []
+            allergens: [],
+            image: true
         },
         {
             id: 7,
@@ -194,7 +196,8 @@ export const menu: menuItem[] = [{
             vegetarian: true,
             allergens: [1],
             extraCat: EXTRA_FALAFEL_CAT,
-            extraEsp: EXTRA_FALAFEL_ESP
+            extraEsp: EXTRA_FALAFEL_ESP,
+            image: true
         },
         {
             id: 15,
@@ -204,7 +207,8 @@ export const menu: menuItem[] = [{
             price: 5.50,
             allergens: [1],
             extraCat: EXTRA_CAT,
-            extraEsp: EXTRA_ESP
+            extraEsp: EXTRA_ESP,
+            image: true
         },
         {
             id: 16,
@@ -214,7 +218,8 @@ export const menu: menuItem[] = [{
             price: 5.50,
             allergens: [1],
             extraCat: EXTRA_CAT,
-            extraEsp: EXTRA_ESP
+            extraEsp: EXTRA_ESP,
+            image: true
         },
         {
             id: 17,
@@ -275,7 +280,8 @@ export const menu: menuItem[] = [{
             descriptionEsp: "berenjena rellena de carne picada acompañada con arroz, ensalada y yogur",
             descriptionCat: "albergínia farcida de carn picada acompañada amb arròs, amanida i iogurt",
             price: 9.90,
-            allergens: [2]
+            allergens: [2],
+            image: true
         }
     ]
 },
@@ -315,7 +321,8 @@ export const menu: menuItem[] = [{
             descriptionEsp: "pincho de pollo servido con arroz o patatas fritas, cremas y pan",
             descriptionCat: "pinxo de pollastre servit amb arròs o patates fergides, cremes i pa",
             price: 8.90,
-            allergens: []
+            allergens: [],
+            image: true
         },
         {
             id: 27,
@@ -350,7 +357,8 @@ export const menu: menuItem[] = [{
             descriptionEsp: "distintas carnes a la barbacoa servidas con babaganoush, hummus de garbanzos, ensalada, arroz o patatas fritas y pan",
             descriptionCat: "diferents carns a la barbacoa servides amb babaganoush, hummus de cigrons, amanida, arròs o patates fregides i pa",
             price: 24.90,
-            allergens: []
+            allergens: [],
+            image: true
         }
     ]
 },
