@@ -1,178 +1,179 @@
 header#header-nav {
-    font-family: var(--ff-bold);
-    background-color: var(--color-soft-transparent);
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    transition: top 300ms;
+  font-family: var(--ff-bold);
+  background-color: var(--color-soft-transparent);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transition: top 300ms;
 }
 
 .logo {
-    float: left;
-    padding-left: 1em;
+  float: left;
+  padding-left: 1em;
 }
 
 .img-logo {
-    color: var(--color-dark);
-    margin:0.67em 2em 0.67em 0;
-    cursor: pointer;
+  color: var(--color-dark);
+  margin: 0.67em 2em 0.67em 0;
+  cursor: pointer;
 }
 
 nav {
-    position: absolute;
-    text-align: right;
-    top: 100%;
-    right: 0;
-    background-color: var(--color-soft-transparent);
-    width: 100%;
-    transform: scale(1,0);
-    transform-origin: top;
-    transition: transform 400ms ease-in-out;
+  position: absolute;
+  text-align: right;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-soft-transparent);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
 }
 
 nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 nav li {
-    margin-right: 1em;
-    margin-bottom: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 nav a {
-    color: var(--color-medium);
-    text-decoration: none;
-    font: 1.2rem;
-    text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 150ms ease-in-out;
+  color: var(--color-medium);
+  text-decoration: none;
+  font: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
 }
 
 nav a:hover,
 nav a.activeItem {
-    color: var(--color-dark);
+  color: var(--color-dark);
 }
 
 .nav-toggle {
-    display: none;
+  display: none;
 }
 
 .nav-toggle:checked ~ nav {
-    transform: scale(1,1);
+  transform: scale(1, 1);
 }
 
 .nav-toggle:checked ~ nav a {
-    opacity: 1;
-    transition: opacity 250ms ease-in-out 250ms;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
 }
 
 .nav-toggle-label {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 1em;
-    height: 100%;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav-toggle-label span,
 .nav-toggle-label span::after,
 .nav-toggle-label span::before {
-    display: block;
-    background-color: var(--color-dark);
-    height: 2px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-    transition: all 150ms ease-in-out;
+  display: block;
+  background-color: var(--color-dark);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+  transition: all 150ms ease-in-out;
 }
 
 .nav-toggle-label span::after,
 .nav-toggle-label span::before {
-    content: '';
-    position: absolute;
+  content: "";
+  position: absolute;
 }
 
 .nav-toggle-label span::before {
-    bottom: 7px;
+  bottom: 7px;
 }
 
 .nav-toggle-label span::after {
-    top: 7px;
+  top: 7px;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span::after {
-    top: 0;
-    transform: rotate(45deg);
+  top: 0;
+  transform: rotate(45deg);
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span::before {
-    bottom: 0;
-    transform: rotate(-45deg);
+  bottom: 0;
+  transform: rotate(-45deg);
 }
 
 @media screen and (min-width: 801px) {
-    .nav-toggle-label {
-        display: none;
-    }
+  .nav-toggle-label {
+    display: none;
+  }
 
-    header#header-nav {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 10fr) 1fr;
-    }
+  header#header-nav {
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 10fr) 1fr;
+  }
 
-    .logo {
-        padding-left: 0;
-        grid-column: 2 / span 1;
-    }
+  .logo {
+    padding-left: 0;
+    grid-column: 2 / span 1;
+  }
 
-    nav {
-        all: unset;
-        grid-column: 3 / span 1;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
+  nav {
+    all: unset;
+    grid-column: 3 / span 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-    nav ul {
-        display: flex;
-        justify-content: flex-end;
-    }
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    nav li {
-        margin-left: 3em;
-        margin-bottom: 0;
-    }
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
 
-    nav a {
-        opacity: 1;
-        position: relative;
-    }
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
 
-    nav a::after {
-        content: '';
-        display: block;
-        height: 5px;
-        background: var(--color-dark);
-        position: absolute;
-        top: 1.75em;
-        left: 0;
-        right: 0;
-        transform: scale(0,1);
-        /*transform-origin: left;*/
-        transition: transform ease-in-out 250ms;
-    }
+  nav a::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background: var(--color-dark);
+    position: absolute;
+    top: 1.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    /*transform-origin: left;*/
+    transition: transform ease-in-out 250ms;
+  }
 
-    nav a:hover::after,
-    nav a.activeItem::after {
-        transform: scale(1,1);
-    }
+  nav a:hover::after,
+  nav a.activeItem::after {
+    transform: scale(1, 1);
+  }
 }

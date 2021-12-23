@@ -70,7 +70,8 @@ const WrapperCarrousel = styled.div`
 
   @media screen and (min-width: 800px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
+    column-gap: 50px;
+    margin: 70px 0;
   }
 `;
 

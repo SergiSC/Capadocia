@@ -4,15 +4,19 @@ import { StyledSection, TitleL, TitleM } from "./About";
 import contactImage from "../assets/images/contact.jpg";
 
 const ContactSection = styled(StyledSection)`
+  height: 100vh;
+`;
+
+const WrapperInfoContact = styled.div`
   @media screen and (min-width: 800px) {
-    height: 30vh;
-    grid-template-columns: 1fr minmax(400px, 2fr) minmax(400px, 2fr) 1fr;
-    padding: 0;
+    display: grid;
+    grid-column: 2 / span 1;
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr);
   }
 `;
 
 const ImageHeader = styled.div`
-  height: 45vh;
+  grid-column: 1 / -1;
   background-image: url(${contactImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,9 +28,11 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 1em 10%;
+  padding: 1em 0;
   @media screen and (min-width: 800px) {
-    grid-column: 2 / span 1;
+    grid-column: 1 / span 1;
+    margin: auto 0;
+    border-right: 2px dashed var(--color-dark);
   }
 `;
 
@@ -35,17 +41,16 @@ const ScheduleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 1em 10%;
+  padding: 1em 0;
   background-color: var(--color-dark);
   color: var(--color-soft);
   @media screen and (min-width: 800px) {
-    border-left: 2px dashed var(--color-dark);
-    grid-column: 3 / span 1;
+    grid-column: 2 / span 1;
     background-color: transparent;
     color: var(--color-dark);
     text-align: end;
     justify-content: initial;
-    margin: 10% 0;
+    margin: auto 0;
   }
 `;
 
@@ -59,16 +64,20 @@ const CustomA = styled.a`
   }
 `;
 
-const StyledH2 = styled.h2`
+const StyledH2 = styled.h2<{ fontSize?: string }>`
   margin-top: 0;
   @media screen and (min-width: 800px) {
     margin-bottom: 0;
+    font-size: ${({ fontSize }) => (fontSize ? fontSize : "2.5rem")};
   }
 `;
 
 const SmallStyledH2 = styled.h2`
   font-size: 0.9em;
   margin-bottom: 0;
+  @media screen and (min-width: 800px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const StyledSpan = styled.span`
@@ -93,41 +102,43 @@ export function Contact({ sectionId, deviceWidth }: ContactProps) {
   }
   return (
     <>
-      <ImageHeader />
       <ContactSection id={sectionId} removePadding>
-        <ContactWrapper>
-          <TitleM>nuestro</TitleM>
-          <TitleL>contacto</TitleL>
-          <CustomA
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.google.com/maps/place/Capadocia/@41.4500602,2.246646,19z/data=!3m1!4b1!4m5!3m4!1s0x12a4bb0ded7876f7:0x9fda5e15a2ce818!8m2!3d41.4500592!4d2.2471932"
-          >
-            <StyledSpan>
-              <i className={iMapClass}></i>
-            </StyledSpan>
+        <ImageHeader />
+        <WrapperInfoContact>
+          <ContactWrapper>
+            <TitleM>nuestro</TitleM>
+            <TitleL>contacto</TitleL>
+            <CustomA
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.google.com/maps/place/Capadocia/@41.4500602,2.246646,19z/data=!3m1!4b1!4m5!3m4!1s0x12a4bb0ded7876f7:0x9fda5e15a2ce818!8m2!3d41.4500592!4d2.2471932"
+            >
+              <StyledSpan>
+                <i className={iMapClass}></i>
+              </StyledSpan>
+              <StyledH2 fontSize="1.9rem">
+                Carrer de Francesc Layret, 79,
+                {deviceWidth < 800 && <br />}
+                08911 Badalona, Barcelona
+              </StyledH2>
+            </CustomA>
+            <CustomA href="tel:+3493384820">
+              <StyledSpan>
+                <i className={iPhoneClass}></i>
+              </StyledSpan>
+              <StyledH2 fontSize="1.9rem">+34 933 84 82 02</StyledH2>
+            </CustomA>
+          </ContactWrapper>
+          <ScheduleWrapper>
+            <TitleL align={deviceWidth > 800 ? "end" : "start"}>horario</TitleL>
+            <SmallStyledH2>abrimos todos los días de</SmallStyledH2>
             <StyledH2>
-              Carrer de Francesc Layret, 79,
-              {deviceWidth < 800 && <br />}
-              08911 Badalona, Barcelona
+              Lunes a Domingo
+              <br />
+              13:00h a 01:00h
             </StyledH2>
-          </CustomA>
-          <CustomA href="tel:+3493384820">
-            <StyledSpan>
-              <i className={iPhoneClass}></i>
-            </StyledSpan>
-            <StyledH2>+34 933 84 82 02</StyledH2>
-          </CustomA>
-        </ContactWrapper>
-        <ScheduleWrapper>
-          <TitleL align={deviceWidth > 800 ? "end" : "start"}>horario</TitleL>
-          <SmallStyledH2>abrimos todos los días de</SmallStyledH2>
-          <StyledH2>
-            Lunes a Domingo
-            <br />
-            13:00h a 01:00h
-          </StyledH2>
-        </ScheduleWrapper>
+          </ScheduleWrapper>
+        </WrapperInfoContact>
       </ContactSection>
     </>
   );

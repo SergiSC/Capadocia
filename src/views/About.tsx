@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import kebab1 from "../assets/images/contact.jpg";
+import kebab1 from "../assets/images/about.jpg";
 import video from "../assets/videos/about.mov";
 import { ImageCarrousel } from "../components/ImageCarrousel";
 import { ImageWrapper } from "../components/ImageWrapper";
@@ -9,7 +9,7 @@ import { TargetAbout } from "../components/TargetAbout";
 import { targetList, TargetListProp } from "../data";
 
 export const StyledSection = styled.section<{ removePadding?: boolean }>`
-  padding: ${(props) => (props.removePadding ? "20px 0" : "20px 10%")};
+  padding: ${(props) => (props.removePadding ? "20px 0 50px" : "20px 10%")};
 
   @media screen and (min-width: 800px) {
     display: grid;
@@ -40,6 +40,10 @@ export const TitleM = styled.h3`
 
 export const PText = styled.p`
   font-weight: 600;
+  @media screen and (min-width: 800px) {
+    font-size: 2em;
+    text-align: center;
+  }
 `;
 
 const OrigenWrapper = styled.div`
@@ -49,7 +53,8 @@ const OrigenWrapper = styled.div`
   @media screen and (min-width: 800px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
+    column-gap: 50px;
+    margin: 20px 0 50px;
   }
 `;
 
@@ -72,6 +77,10 @@ const TargetsWrapper = styled.div`
   }
 `;
 
+const ImgWrap = styled(ImageWrapper)`
+  height: 100%;
+`;
+
 const StyledVideo = styled.video`
   width: 100%;
   padding: 20px 0;
@@ -91,26 +100,24 @@ export function About({ sectionId, deviceWidth }: AboutProps) {
           <TitleL margin={deviceWidth > 800 ? "40%" : "0"}>nosotros</TitleL>
           <PText>
             Somos un restaurante de comida tradicional Turca, nos caracterizamos
-            por el sabor natural y fresco de la carne, que es preparada cada día
-            en nuestra cocina.
+            por el sabor natural <br /> y fresco de la carne, que es preparada
+            cada día en nuestra cocina.
           </PText>
           <ImageCarrousel width={deviceWidth} />
+          <TitleM>el</TitleM>
+          <TitleL>origen</TitleL>
           <OrigenWrapper>
-            <div>
-              <TitleM>el</TitleM>
-              <TitleL>origen</TitleL>
-              <PText>
-                El nombre de Capadocia hace referencia a una región turística
-                histórica de Turquía caracterizada por tener unos paisajes
-                montañosos idílicos. <br />
-                <br /> Sobrevolar la ciudad en globo aerostático es la manera
-                más espectacular de ver estos paisajes, entre ellos, el espacio
-                más emblemático son “Las chimeneas de hadas”, una curiosa
-                formación geológica única en el mundo que consta de unas
-                columnas de piedra con terminaciones en forma de hongo.
-              </PText>
-            </div>
-            <ImageWrapper bgImage={kebab1}></ImageWrapper>
+            <PText>
+              El nombre de Capadocia hace referencia a una región turística
+              histórica de Turquía caracterizada por tener unos{" "}
+              <strong>paisajes montañosos idílicos</strong>. <br />
+              <br /> Sobrevolar la ciudad en globo aerostático es la manera más
+              espectacular de ver estos paisajes, entre ellos, el espacio más
+              emblemático son “Las chimeneas de hadas”, una curiosa formación
+              geológica única en el mundo que consta de unas columnas de piedra
+              con terminaciones en forma de hongo.
+            </PText>
+            <ImgWrap bgImage={kebab1}></ImgWrap>
           </OrigenWrapper>
         </div>
       </StyledSection>

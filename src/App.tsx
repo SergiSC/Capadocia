@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import { About } from "./views/About";
-import Carta from "./views/carta/carta";
+import { Carta } from "./views/carta/newCarta";
 import { Home } from "./views/Home";
 import { Footer } from "./components/Footer";
 import { Contact } from "./views/Contact";
