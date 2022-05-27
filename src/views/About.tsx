@@ -9,13 +9,22 @@ import { TargetAbout } from "../components/TargetAbout";
 import { targetList, TargetListProp } from "../data";
 
 export const StyledSection = styled.section<{ removePadding?: boolean }>`
-  padding: ${(props) => (props.removePadding ? "20px 0 50px" : "20px 10%")};
+  padding: ${(props) => (props.removePadding ? "80px 0 0" : "80px 10% 0")};
 
   @media screen and (min-width: 800px) {
     display: grid;
     grid-template-columns: 1fr minmax(800px, 4fr) 1fr;
-    padding: 20px 0;
+    padding: 100px 0 0 0;
+    ${(props) =>
+      props.removePadding &&
+      css`
+        grid-template-columns: 1fr;
+      `}
   }
+`;
+
+const Section = styled(StyledSection)`
+  padding-top: 0;
 `;
 
 const TitleBase = css<{ align?: string; margin?: string }>`
@@ -69,7 +78,7 @@ const TargetsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  padding: 20px;
+  padding: 20px 20px;
   @media screen and (min-width: 800px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -121,26 +130,24 @@ export function About({ sectionId, deviceWidth }: AboutProps) {
           </OrigenWrapper>
         </div>
       </StyledSection>
-      <StyledSection removePadding>
-        <div style={{ gridColumn: 2 }}>
-          <DiferenciamosWrapper>
-            <TitleL align="center">nos diferenciamos por...</TitleL>
-            <TargetsWrapper>
-              {targetList.map((t: TargetListProp, index: number) => (
-                <TargetAbout key={index} {...t} />
-              ))}
-            </TargetsWrapper>
-          </DiferenciamosWrapper>
-        </div>
-      </StyledSection>
-      <StyledSection>
-        <div style={{ gridColumn: 2 }}>
+      <Section id={sectionId} removePadding>
+        <DiferenciamosWrapper>
+          <TitleL align="center">nos diferenciamos por...</TitleL>
+          <TargetsWrapper>
+            {targetList.map((t: TargetListProp, index: number) => (
+              <TargetAbout key={index} {...t} />
+            ))}
+          </TargetsWrapper>
+        </DiferenciamosWrapper>
+      </Section>
+      <Section id={sectionId}>
+        <div style={{ gridColumn: 2, paddingTop: 20 }}>
           <TitleL align="center">conócenos por dentro</TitleL>
           <StyledVideo autoPlay loop muted>
             <source src={video} type="video/mp4"></source>
           </StyledVideo>
         </div>
-      </StyledSection>
+      </Section>
     </>
   );
 }

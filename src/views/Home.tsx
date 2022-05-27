@@ -58,8 +58,9 @@ const HomeSection = styled.section<{ bgImage: string }>`
   text-align: start;
   padding: 0 10%;
   font-size: 16pt;
-  height: 100vh;
+  height: calc(100vh - 80px);
   color: var(--color-dark);
+  padding-top: 80px;
   ${animation}
 
   :before {
@@ -80,7 +81,7 @@ const HomeSection = styled.section<{ bgImage: string }>`
 
   @media screen and (min-width: 800px) {
     display: grid;
-    grid-template-columns: 2fr minmax(800px, 6fr) 1fr;
+    grid-template-columns: 3fr minmax(700px, 6fr) minmax(100px, 1fr) 1fr;
     padding: 0;
   }
 
@@ -89,17 +90,19 @@ const HomeSection = styled.section<{ bgImage: string }>`
   }
 `;
 
-const HomeWrapper = styled.div`
-  @media screen and (min-width: 800px) {
-    grid-column: 2 / span 1;
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    font-size: 25pt;
-    padding: 0;
-  }
-`;
+// const HomeWrapper = styled.div`
+//   @media screen and (min-width: 800px) {
+//     grid-column: 2 / span 1;
+//     display: grid;
+//     grid-template-columns: 4fr 1fr;
+//     font-size: 25pt;
+//     padding: 0;
+//   }
+// `;
 
 const TextContainer = styled.div`
+  grid-column: 2 / span 1;
+  font-size: 25pt;
   @media screen and (min-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -108,6 +111,7 @@ const TextContainer = styled.div`
 `;
 
 const IconsContainer = styled.div`
+  font-size: 25pt;
   display: flex;
   justify-content: center;
   margin-top: 20%;
@@ -155,6 +159,7 @@ const CustomA = styled.a`
   font-size: 1.3em;
   @media screen and (min-width: 800px) {
     margin-top: 20%;
+    margin-right: 0;
   }
 `;
 
@@ -204,7 +209,7 @@ const CustomANext = styled(CustomA)`
 
 const TitleLHome = styled(TitleL)`
   margin: 20px 0;
-  font-size: 2em;
+  font-size: 1.7em;
   white-space: pre-line;
 `;
 
@@ -260,32 +265,30 @@ export function Home({ sectionId, deviceWidth }: HomeProps) {
 
   return (
     <HomeSection id={sectionId} bgImage={slideState.image}>
-      <HomeWrapper>
-        <TextContainer>
-          <TitleM>{slideState.littleText}</TitleM>
-          <TitleLHome>
-            {deviceWidth > 800 ? slideState.textDesktop : slideState.textMovil}
-          </TitleLHome>
-          <CartaA href="#carta">{slideState.buttonText}</CartaA>
-        </TextContainer>
-        <IconsContainer>
-          <Telephone href="tel:+3493384820" title="Teléfono">
-            <span>
-              <i className="fas fa-phone-alt"></i>
-            </span>
-          </Telephone>
-          <Map
-            title="Mapa"
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.google.com/maps/place/Capadocia/@41.4500602,2.246646,19z/data=!3m1!4b1!4m5!3m4!1s0x12a4bb0ded7876f7:0x9fda5e15a2ce818!8m2!3d41.4500592!4d2.2471932"
-          >
-            <span>
-              <i className="fas fa-map-marker-alt"></i>
-            </span>
-          </Map>
-        </IconsContainer>
-      </HomeWrapper>
+      <TextContainer>
+        <TitleM>{slideState.littleText}</TitleM>
+        <TitleLHome>
+          {deviceWidth > 800 ? slideState.textDesktop : slideState.textMovil}
+        </TitleLHome>
+        <CartaA href="#carta">{slideState.buttonText}</CartaA>
+      </TextContainer>
+      <IconsContainer>
+        <Telephone href="tel:+3493384820" title="Teléfono">
+          <span>
+            <i className="fas fa-phone-alt"></i>
+          </span>
+        </Telephone>
+        <Map
+          title="Mapa"
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.google.com/maps/place/Capadocia/@41.4500602,2.246646,19z/data=!3m1!4b1!4m5!3m4!1s0x12a4bb0ded7876f7:0x9fda5e15a2ce818!8m2!3d41.4500592!4d2.2471932"
+        >
+          <span>
+            <i className="fas fa-map-marker-alt"></i>
+          </span>
+        </Map>
+      </IconsContainer>
       <CustomANext href="#about">
         <span>
           <i className="fas fa-chevron-down"></i>
