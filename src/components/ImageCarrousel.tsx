@@ -49,7 +49,7 @@ export function ImageCarrousel({ width }: ImageCarrouselProps) {
         ))
       ) : (
         <>
-          <ImageWrapper bgImage={selectImage()} border />
+          <ImageWrapper bgImage={selectImage()} />
           <ImageCarrouselButtonLeft onClick={onClickLeftHandle}>
             &#60;
           </ImageCarrouselButtonLeft>
@@ -92,11 +92,9 @@ const BaseButtonCarrousel = styled.button`
 const ImageCarrouselButtonLeft = styled(BaseButtonCarrousel)`
   left: 0;
   transform: translate(-50%, -50%);
-  border-left: solid 1px var(--color-dark);
 `;
 
 const ImageCarrouselButtonRight = styled(BaseButtonCarrousel)`
   right: 0;
   transform: translate(50%, -50%);
-  border-right: solid 1px var(--color-dark);
 `;

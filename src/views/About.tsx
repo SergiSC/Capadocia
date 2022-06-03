@@ -72,6 +72,17 @@ const DiferenciamosWrapper = styled.div`
   background-color: var(--color-dark);
   color: var(--color-soft);
   position: relative;
+
+  @media screen and (min-width: 800px) {
+    display: grid;
+    grid-template-columns: 1fr minmax(800px, 4fr) 1fr;
+    padding: 60px 0;
+
+    h1,
+    & > div {
+      grid-column: 2;
+    }
+  }
 `;
 
 const TargetsWrapper = styled.div`
@@ -82,7 +93,14 @@ const TargetsWrapper = styled.div`
   @media screen and (min-width: 800px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
+    column-gap: 150px;
+    width: fit-content;
+    padding: 20px 0 0 0;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1500px) {
+    column-gap: 300px;
   }
 `;
 
@@ -105,8 +123,8 @@ export function About({ sectionId, deviceWidth }: AboutProps) {
     <>
       <StyledSection id={sectionId}>
         <div style={{ gridColumn: 2 }}>
-          <TitleM margin={deviceWidth > 800 ? "40%" : "0"}>sobre</TitleM>
-          <TitleL margin={deviceWidth > 800 ? "40%" : "0"}>nosotros</TitleL>
+          <TitleM>sobre</TitleM>
+          <TitleL>nosotros</TitleL>
           <PText>
             Somos un restaurante de comida tradicional Turca, nos caracterizamos
             por el sabor natural <br /> y fresco de la carne, que es preparada
@@ -140,14 +158,14 @@ export function About({ sectionId, deviceWidth }: AboutProps) {
           </TargetsWrapper>
         </DiferenciamosWrapper>
       </Section>
-      <Section id={sectionId}>
-        <div style={{ gridColumn: 2, paddingTop: 20 }}>
+      <StyledSection id={sectionId}>
+        <div style={{ gridColumn: 2 }}>
           <TitleL align="center">conócenos por dentro</TitleL>
           <StyledVideo autoPlay loop muted>
             <source src={video} type="video/mp4"></source>
           </StyledVideo>
         </div>
-      </Section>
+      </StyledSection>
     </>
   );
 }

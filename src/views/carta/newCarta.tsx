@@ -1,15 +1,14 @@
 import React, { Fragment, useCallback, useState } from "react";
 import styled, { css } from "styled-components";
-import { menu, Product, TypeProduct } from "../../data";
+
+import { Allergen, menu, Product, TypeProduct } from "../../data";
 import { StyledSection, TitleL, TitleM } from "../About";
 
 const Wrapper = styled.div`
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 10px 16px 0;
-  margin: 0 auto;
 
   :hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -56,9 +55,7 @@ const Allergens = styled.div`
 `;
 
 const DivLine = styled.div`
-  width: 50%;
   border-bottom: 1px solid #ccc;
-  margin: 0 auto;
   :last-child {
     display: none;
   }
@@ -102,12 +99,24 @@ export function ItemCarta({
         <Title>{titleEsp}</Title>
         <Allergens>
           {vegetarian && (
-            <img src={`/assets/allergens/veggie.png`} alt="error" />
+            <img
+              src={`/assets/allergens/veggie.png`}
+              alt="vegetariano"
+              title="vegetariano"
+            />
           )}
           {allergens.length > 0 &&
             allergens.map((a) => {
               const allergenImage = `/assets/allergens/${a}.png`;
-              return <img src={allergenImage} alt="error" key={a} />;
+              const allergenName = Allergen.get(a);
+              return (
+                <img
+                  src={allergenImage}
+                  alt={allergenName}
+                  key={a}
+                  title={allergenName}
+                />
+              );
             })}
         </Allergens>
         <div style={{ width: "fit-content", whiteSpace: "nowrap" }}>

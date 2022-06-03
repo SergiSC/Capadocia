@@ -45,7 +45,7 @@ nav li {
   margin-bottom: 1em;
 }
 
-nav a {
+nav button {
   color: var(--color-medium);
   text-decoration: none;
   font: 1.2rem;
@@ -53,10 +53,14 @@ nav a {
   opacity: 0;
   transition: opacity 150ms ease-in-out;
   height: 80px;
+  height: fit-content;
+  background: transparent;
+  border: none;
+  font-family: var(--ff-bold);
 }
 
-nav a:hover,
-nav a.activeItem {
+nav button:hover,
+nav button.activeItem {
   color: var(--color-dark);
 }
 
@@ -68,7 +72,7 @@ nav a.activeItem {
   transform: scale(1, 1);
 }
 
-.nav-toggle:checked ~ nav a {
+.nav-toggle:checked ~ nav button {
   opacity: 1;
   transition: opacity 250ms ease-in-out 250ms;
 }
@@ -123,7 +127,7 @@ nav a.activeItem {
   transform: rotate(-45deg);
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 800px) {
   .nav-toggle-label {
     display: none;
   }
@@ -157,12 +161,12 @@ nav a.activeItem {
     margin-bottom: 0;
   }
 
-  nav a {
+  nav button {
     opacity: 1;
     position: relative;
   }
 
-  nav a::after {
+  nav button::after {
     content: "";
     display: block;
     height: 5px;
@@ -176,8 +180,8 @@ nav a.activeItem {
     transition: transform ease-in-out 250ms;
   }
 
-  nav a:hover::after,
-  nav a.activeItem::after {
+  nav button:hover::after,
+  nav button.activeItem::after {
     transform: scale(1, 1);
   }
 }
