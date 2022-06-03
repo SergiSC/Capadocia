@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Logo from "../../assets/icons/logo.png";
 import "./navbar.css";
+
+import React, { useCallback, useEffect, useState } from "react";
+
+import Logo from "../../assets/icons/capadocciablack.png";
 
 function NavBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -38,12 +40,15 @@ function NavBar() {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    document.body.style.overflowY = isOpen ? "hidden" : "visible";
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleScroll, isOpen]);
+  }, [handleScroll]);
+
+  const handleClick = useCallback((to: string) => {
+    window.location.assign(to);
+    (document.getElementById("nav-toggle") as HTMLInputElement).click();
+  }, []);
 
   return (
     <header
@@ -70,33 +75,36 @@ function NavBar() {
       <nav style={{ backgroundColor: transparent ? "transparent" : "" }}>
         <ul>
           <li>
-            <a className={`${active === "" ? "activeItem" : ""}`} href="#home">
+            <button
+              className={`${active === "" ? "activeItem" : ""}`}
+              onClick={() => handleClick("#home")}
+            >
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a
+            <button
               className={`${active === "about" ? "activeItem" : ""}`}
-              href="#about"
+              onClick={() => handleClick("#about")}
             >
               Nosotros
-            </a>
+            </button>
           </li>
           <li>
-            <a
+            <button
               className={`${active === "carta" ? "activeItem" : ""}`}
-              href="#carta"
+              onClick={() => handleClick("#carta")}
             >
               Carta
-            </a>
+            </button>
           </li>
           <li>
-            <a
+            <button
               className={`${active === "contact" ? "activeItem" : ""}`}
-              href="#contact"
+              onClick={() => handleClick("#contact")}
             >
               Contacto
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

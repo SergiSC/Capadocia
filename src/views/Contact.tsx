@@ -1,14 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledSection, TitleL, TitleM } from "./About";
+
 import contactImage from "../assets/images/contact.jpg";
+import { StyledSection, TitleL, TitleM } from "./About";
 
 const ContactSection = styled(StyledSection)`
-  height: 100vh;
+  height: fit-content;
+  @media screen and (min-width: 800px) {
+    height: 100vh;
+    display: block;
+  }
 `;
 
 const WrapperInfoContact = styled.div`
   @media screen and (min-width: 800px) {
+    height: 40%;
     display: grid;
     grid-column: 2 / span 1;
     grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr);
@@ -16,11 +22,14 @@ const WrapperInfoContact = styled.div`
 `;
 
 const ImageHeader = styled.div`
-  grid-column: 1 / -1;
   background-image: url(${contactImage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @media screen and (min-width: 800px) {
+    height: 60%;
+  }
 `;
 
 const ContactWrapper = styled.div`
@@ -28,7 +37,7 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 1em 0;
+  padding: 0 10%;
   @media screen and (min-width: 800px) {
     grid-column: 1 / span 1;
     margin: auto 0;
@@ -41,7 +50,7 @@ const ScheduleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 1em 0;
+  padding: 20px 10%;
   background-color: var(--color-dark);
   color: var(--color-soft);
   @media screen and (min-width: 800px) {

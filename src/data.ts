@@ -1,7 +1,7 @@
-import Meat from "./assets/icons/meat.png";
-import KebapIcon from "./assets/icons/kebap.png";
 import Cup from "./assets/icons/cup.png";
+import KebapIcon from "./assets/icons/kebap.png";
 import Leaf from "./assets/icons/leaf.png";
+import Meat from "./assets/icons/meat.png";
 
 export const TypeProduct = new Map<number, string>([
   [1, "ensaladas y entrantes"],
@@ -58,16 +58,16 @@ export const menu: menuItem[] = [
         id: 1,
         titleEsp: "ensalada mixta con queso feta",
         titleCat: "amanida mixta amb formatge feta",
-        price: 4.9,
+        price: 5.5,
         vegetarian: true,
         allergens: [2],
       },
       {
         id: 2,
-        titleEsp: "Tzaziki",
+        titleEsp: "Cacik",
         descriptionCat: "crema de cogombre",
         descriptionEsp: "crema de pepino",
-        price: 4.5,
+        price: 4.9,
         vegetarian: true,
         allergens: [],
       },
@@ -76,7 +76,7 @@ export const menu: menuItem[] = [
         titleEsp: "Hummus",
         descriptionCat: "crema de cigrons",
         descriptionEsp: "crema de garbanzos",
-        price: 4.5,
+        price: 4.9,
         vegetarian: true,
         allergens: [1],
         image: true,
@@ -86,7 +86,7 @@ export const menu: menuItem[] = [
         titleEsp: "Babaganoush",
         descriptionCat: "crema d'albergínia",
         descriptionEsp: "crema de berenjena",
-        price: 4.5,
+        price: 4.9,
         vegetarian: true,
         allergens: [],
       },
@@ -94,9 +94,11 @@ export const menu: menuItem[] = [
         id: 5,
         titleEsp: "Tapas frías mixtas",
         titleCat: "Tapes fredes mixtes",
-        descriptionCat: "hummus, tzaziki, sarma, falafel i babaganoush",
-        descriptionEsp: "hummus, tzaziki, sarma, falafel y babaganoush",
-        price: 7.9,
+        descriptionCat:
+          "hummus, antep ezme, crema d'alberginia, sarma i falafel",
+        descriptionEsp:
+          "hummus, antep ezme, crema de berenjena, sarma y falafel",
+        price: 8.2,
         vegetarian: true,
         allergens: [1, 5],
         image: true,
@@ -114,7 +116,7 @@ export const menu: menuItem[] = [
         id: 7,
         titleEsp: "Patatas bravas turcas",
         titleCat: "Patates braves turques",
-        price: 3.0,
+        price: 3.4,
         vegetarian: true,
         allergens: [],
       },
@@ -123,19 +125,10 @@ export const menu: menuItem[] = [
         titleEsp: "Sarma (5u.)",
         descriptionEsp: "hojas de parra rellenas de arroz",
         descriptionCat: "fulles de parra farcides d'arròs",
-        price: 4.5,
+        price: 4.9,
         vegetarian: true,
         allergens: [1],
         image: true,
-      },
-      {
-        id: 9,
-        titleEsp: "Borek",
-        descriptionEsp: "hojaldre relleno de queso y espinacas",
-        descriptionCat: "pasta de full farcit de formatge i espinacs",
-        price: 4.0,
-        vegetarian: true,
-        allergens: [1, 2],
       },
       {
         id: 10,
@@ -144,6 +137,17 @@ export const menu: menuItem[] = [
         descriptionEsp: "pizza turca, picadillo de verduras con carne picada",
         price: 4.5,
         allergens: [1],
+      },
+      {
+        id: 99,
+        titleEsp: "Antez Ezme",
+        price: 4.9,
+        allergens: [4],
+        vegetarian: true,
+        descriptionCat:
+          "Tomàquet, ceba, pebrot, julivert, nous, all, menta i oli d'oliva. Picant.",
+        descriptionEsp:
+          "Tomate, cebolla, pimiento, perejil, nueces,ajo, menta y aceite de oliva. Picante.",
       },
     ],
   },
@@ -157,7 +161,7 @@ export const menu: menuItem[] = [
           "Pan turco (pita) relleno de ternera y/o pollo con lechuga, cebolla, tomate y col",
         descriptionCat:
           "Pa turc (pita) farcida de vadella i/o pollastre amb enciam, ceba, tomàquet i col",
-        price: 3.8,
+        price: 4.2,
         allergens: [1],
         extraCat: EXTRA_CAT,
         extraEsp: EXTRA_ESP,
@@ -170,7 +174,7 @@ export const menu: menuItem[] = [
           "Pan fino enrollado relleno de ternera y/o pollo con lechuga, cebolla, tomate y col",
         descriptionCat:
           "Pa fi enrotllat farcida de vadella i/o pollastre amb enciam, ceba, tomàquet i col",
-        price: 4.0,
+        price: 4.4,
         allergens: [1],
         extraCat: EXTRA_CAT,
         extraEsp: EXTRA_ESP,
@@ -209,7 +213,7 @@ export const menu: menuItem[] = [
         descriptionEsp:
           "Pan fino enrollado con un pincho de carne picada picante",
         descriptionCat: "Pa fi enrotllat amb un pinxo de carn picada picant",
-        price: 5.5,
+        price: 6.9,
         allergens: [1],
         extraCat: EXTRA_CAT,
         extraEsp: EXTRA_ESP,
@@ -220,7 +224,7 @@ export const menu: menuItem[] = [
         titleEsp: "sis dürüm",
         descriptionEsp: "Pan fino enrollado con un pincho de pollo o cordero",
         descriptionCat: "Pa fi enrotllat amb un pinxo de pollastre o xai",
-        price: 5.5,
+        price: 6.9,
         allergens: [1],
         extraCat: EXTRA_CAT,
         extraEsp: EXTRA_ESP,
@@ -234,7 +238,7 @@ export const menu: menuItem[] = [
           "Ternera y/o pollo con ensalada, arroz o patatas fritas",
         descriptionCat:
           "Vadella i/o pollastre amb amannida, arròs o patates fregides",
-        price: 7.9,
+        price: 8.9,
         allergens: [],
         image: true,
       },
@@ -262,7 +266,7 @@ export const menu: menuItem[] = [
           "típico plato turco con carne de ternera, pan, arroz y salsa de tomate iskender con mantequilla fundida",
         descriptionCat:
           "típic plat turc amb carn de vadella, pa, arròs i salsa de tomàquet iskender amb mantega fosa",
-        price: 9.9,
+        price: 10.9,
         allergens: [1, 2],
         image: true,
       },
@@ -274,7 +278,7 @@ export const menu: menuItem[] = [
           "carne de ternera y pollo, champiñones, mozarella, pimiento, huevo y zanahoria acompañado con patatas fritas, ensalada y babaganoush",
         descriptionCat:
           "carn de vadella i pollastre, xampinoys, mozarella, pebrot, ou i pastanaga acompanyat amb patates fregides, amanida i babaganoush",
-        price: 7.9,
+        price: 8.9,
         allergens: [1, 3],
       },
       {
@@ -284,7 +288,7 @@ export const menu: menuItem[] = [
           "carne picada mezclada con babaganoush servida con verduras fritas, salsa de tomate y pan",
         descriptionCat:
           "carn picada barrejada amb babaganoush servit amb verdures fregides, salsa de tomàquet i pa",
-        price: 9.9,
+        price: 10.9,
         allergens: [],
       },
       {
@@ -294,7 +298,7 @@ export const menu: menuItem[] = [
           "berenjena rellena de carne picada acompañada con arroz, ensalada y yogur",
         descriptionCat:
           "albergínia farcida de carn picada acompañada amb arròs, amanida i iogurt",
-        price: 9.9,
+        price: 8.9,
         allergens: [2],
         image: true,
       },
@@ -321,7 +325,7 @@ export const menu: menuItem[] = [
           "pincho de carne picada picante (o sin picante) servido con arroz o patatas fritas, cremas y pan",
         descriptionCat:
           "pinxo de carn picada picant (o sense picant) servit amb arròs o patates fregides, cremes i pa",
-        price: 8.9,
+        price: 9.9,
         allergens: [],
         image: true,
       },
@@ -332,7 +336,7 @@ export const menu: menuItem[] = [
           "pincho de cordero servido con arroz o patatas fritas, cremas y pan",
         descriptionCat:
           "pinxo de xai servit amb arròs o patates fergides, cremes i pa",
-        price: 9.9,
+        price: 10.9,
         allergens: [],
         image: true,
       },
@@ -354,7 +358,7 @@ export const menu: menuItem[] = [
           "pincho de carne picada de ternera y cordero enrollado en pan fino con salsa de tomate y mantequilla fundida servida con yogur y patatas fritas o arroz",
         descriptionCat:
           "pinxo de carn picada de vadella y xai enrotllat en pa fi amb salsa de tomàquet i mantega fosa servit amb igourt i patates fregides o arròs",
-        price: 9.9,
+        price: 10.9,
         allergens: [],
       },
       {
@@ -368,16 +372,6 @@ export const menu: menuItem[] = [
         image: true,
       },
       {
-        id: 29,
-        titleEsp: "pirzola",
-        descriptionEsp:
-          "costillas de cordero servidas con arroz o patatas fritas, cremas y pan",
-        descriptionCat:
-          "costelles de xai servides amb arròs o patates fregides, cremes i pa",
-        price: 9.9,
-        allergens: [],
-      },
-      {
         id: 30,
         titleEsp: "plato capadocia para dos",
         titleCat: "plat capadocia per a dos",
@@ -385,7 +379,7 @@ export const menu: menuItem[] = [
           "distintas carnes a la barbacoa servidas con babaganoush, hummus de garbanzos, ensalada, arroz o patatas fritas y pan",
         descriptionCat:
           "diferents carns a la barbacoa servides amb babaganoush, hummus de cigrons, amanida, arròs o patates fregides i pa",
-        price: 24.9,
+        price: 26.9,
         allergens: [],
         image: true,
       },
@@ -411,7 +405,7 @@ export const menu: menuItem[] = [
         titleEsp: "Yogur natural",
         titleCat: "Iogurt amb mel o mermelada i nous",
         descriptionEsp: "con miel o mermelada y nueces",
-        price: 1.7,
+        price: 2.9,
         vegetarian: true,
         allergens: [2, 4],
       },

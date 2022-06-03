@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from "react";
-import styled, { keyframes, css } from "styled-components";
-import { TitleL, TitleM } from "./About";
+import styled, { css, keyframes } from "styled-components";
+
 import bgImageMenu from "../assets/images/bg-kebab.jpg";
 import bgImageLandscape from "../assets/images/bgImageLandscape.jpeg";
 import { useInterval } from "../hooks/interval";
+import { TitleL, TitleM } from "./About";
 
 const intervalSeconds = 8;
 
@@ -83,6 +84,7 @@ const HomeSection = styled.section<{ bgImage: string }>`
     display: grid;
     grid-template-columns: 3fr minmax(700px, 6fr) minmax(100px, 1fr) 1fr;
     padding: 0;
+    padding-top: 100px;
   }
 
   @media screen and (max-width: 350px) {
